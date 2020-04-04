@@ -42,7 +42,7 @@ if [ ! -x $NIM_BIN ]; then
 
     git clone --depth 1 --branch $nim_branch $nim_repo $NIM_DIR
     cd $NIM_DIR
-    sh build_all.sh -d:ssl
+    sh build_all.sh
 
     echo "using ${nim_repo} @${nim_branch}" | indent
 fi
@@ -58,4 +58,4 @@ fi
 
 echo "Building app" | arrow
 cd $BUILD_DIR
-$NIMBLE_BIN build --accept
+$NIMBLE_BIN build --accept -d:ssl
