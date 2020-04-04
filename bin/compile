@@ -42,7 +42,7 @@ if [ ! -x $NIM_BIN ]; then
 
     git clone --depth 1 --branch $nim_branch $nim_repo $NIM_DIR
     cd $NIM_DIR
-    sh build_all.sh
+    sh build_all.sh -d:ssl
 
     echo "using ${nim_repo} @${nim_branch}" | indent
 fi
